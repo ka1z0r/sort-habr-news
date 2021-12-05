@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% if news %}
+    {% for article in news %}
+    <li>
+        <h4><a target="_blank" href="{{ article.article_url }}">{{ article.title }}</a> <span class='score'>
+            {{ article.score }}</span> {{ article.time }} {{ article.votes }} Просмотры: {{ article.views }}
+            Комментарии: {{ article.comments }}
+        </h4>
+        <pre>{{ comment.raw_comment|safe }}</pre>
+    </li>
+    {% endfor %}
+    {% endif %}
+</ul>
+</body>
+</html>
