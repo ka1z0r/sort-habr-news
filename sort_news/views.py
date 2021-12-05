@@ -32,7 +32,7 @@ def index(request):
                 art['controversy'] = min(int(votes[0][1:]), int(votes[1][1:]))
                 art['votes'] = votes[0] + ' ' + votes[1]
             except:
-                art['votes'] = ['↑0', '↓0']
+                art['votes'] = '↑0 ↓0'
                 art['controversy'] = 0
             all_articles.append(art)
         sleep(10)
